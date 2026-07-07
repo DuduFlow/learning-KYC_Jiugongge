@@ -1,1 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>九宮格｜從對話到成交 學習教案筆記</title>
+  <meta name="description" content="陳昶宇行銷襄理課程筆記：九宮格訪談紀錄表、七大指標、攻守配置、問句庫與方小姐案例演練。">
+  <link rel="icon" href="data:,">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=20260707c">
+</head>
+<body>
+  <nav class="topbar no-print">
+    <a class="brand" href="#top">九宮格學習頁</a>
+    <div class="nav-links">
+      <a href="#map">總覽</a><a href="#seven">七格</a><a href="#attack">進攻</a><a href="#defense">防守</a><a href="#skills">技能</a><a href="#questions">問句</a><a href="#case">案例</a><a href="#homework">作業</a>
+    </div>
+    <div class="nav-progress" aria-label="學習進度"><span id="navProgressText">0%</span><i><b id="navProgressBar"></b></i></div>
+    <a class="btn btn-soft compact home-link" href="https://duduflow.github.io/learning_notes_catalog/">返回目錄</a>
+    <button class="btn btn-soft compact print-link" onclick="window.print()">列印</button>
+  </nav>
 
+  <div class="mobile-home no-print"><a class="btn btn-soft" href="https://duduflow.github.io/learning_notes_catalog/">返回學習目錄</a></div>
+  <div class="mobile-jump no-print" aria-label="手機快速導覽"><a href="#map">總覽</a><a href="#questions">問句</a><a href="#case">案例</a><a href="#homework">作業</a></div>
+
+  <header id="top" class="hero">
+    <img src="assets/nine-grid-hero.svg" alt="九宮格課程主視覺" class="hero-bg">
+    <div class="hero-shade"></div>
+    <div class="hero-inner">
+      <p class="eyebrow">早會課程｜陳昶宇 行銷襄理</p>
+      <h1>從對話到成交，<br>先把九宮格填滿。</h1>
+      <p class="hero-copy">主管不是會算命，是腦袋裡有結構。這份學習頁把訪談紀錄表拆成七個格子：問什麼、為什麼問、問完怎麼推進。少一點漂亮廢話，多一點能帶出門的問句。</p>
+      <div class="hero-actions"><a class="btn btn-primary" href="#map">開始學九宮格</a><a class="btn btn-light" href="#homework">直接填客戶九宮格</a></div>
+    </div>
+    <div class="scroll-cue no-print" aria-hidden="true"></div>
+  </header>
+
+  <main>
+    <section id="progress" class="section tight">
+      <div class="wrap"><div class="dashboard">
+        <div><p class="label">學習完成度</p><h2>把課程變成下一次面談。</h2><p>完成 7 個練習後，輸出一份「可直接跟主管討論」的客戶九宮格。</p></div>
+        <div class="progress-box"><div class="progress-head"><strong id="progressText">0%</strong><button class="btn btn-primary" onclick="exportPlan()">匯出九宮格</button></div><div class="progress-track"><b id="progressBar"></b></div><div id="progressList" class="progress-list"></div></div>
+      </div></div>
+    </section>
+
+    <section id="map" class="section" data-step="map">
+      <div class="wrap split">
+        <div class="section-lead"><p class="label">一、工具定位</p><h2>訪談紀錄表，不是紀錄；是控場地圖。</h2><p>它的任務只有三個：不要聊到失焦、不要漏掉成交線索、不要把方案送進大海。客戶講得越多，你越要知道每句話該放到哪一格。</p><blockquote>九宮格沒填滿，不要急著見客戶；真的要見，就帶著問句去補洞。</blockquote></div>
+        <div class="nine-card">
+          <div class="nine-title"><span>價值深挖</span><b>進攻鏈</b></div>
+          <div class="mini-grid">
+            <button data-panel="goal" class="mini attack">目標</button><button data-panel="urgency" class="mini attack">急迫性</button><button data-panel="preference" class="mini defense">偏好</button>
+            <button data-panel="need" class="mini attack">需求</button><button data-panel="core" class="mini core">客戶</button><button data-panel="decision" class="mini defense">決策者</button>
+            <button data-panel="status" class="mini attack wide">現況</button><button data-panel="competitor" class="mini defense">競爭者</button>
+          </div>
+          <div id="mapPanel" class="map-panel">點九宮格，看每一格要問出什麼。下方作業區填了哪格，這裡就亮哪格——目標是親眼看著九宮格被填滿。</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="seven" class="section alt" data-step="seven">
+      <div class="wrap"><div class="center-head"><p class="label">二、七大格子</p><h2>一場完整訪談，要問出這七件事。</h2><p>把「身家調查」包成顧問對談。不要像警察盤問，除非你準備順便幫客戶做筆錄，這個通常不加分。</p></div>
+      <div class="grid seven-grid">
+        <article class="card"><span class="num">1</span><h3>目標：期待與擔心</h3><p>他想完成什麼？怕什麼阻礙？先有動機，後面才有需求。</p></article>
+        <article class="card"><span class="num">2</span><h3>現況：財務資料</h3><p>收入、支出、資產、保單、負債、時間因素。用理財金三角盤點，不要硬問月薪。</p></article>
+        <article class="card"><span class="num">3</span><h3>需求：期待與現況落差</h3><p>想退休、想照顧家人、想保住現金流，都要算成差距。沒有落差，就沒有需求。</p></article>
+        <article class="card"><span class="num">4</span><h3>急迫性：為什麼現在</h3><p>生日、等待期、費率、健康狀況、時間成本。兩方都急，成交才會動。</p></article>
+        <article class="card"><span class="num">5</span><h3>偏好：方案接受度</h3><p>保守或積極？台幣或美金？最排斥什麼工具？先問偏好，少做白工。</p></article>
+        <article class="card"><span class="num">6</span><h3>決策者：誰能拍板</h3><p>有錢又有決定權才算。媽媽、配偶、姐姐、同住者，常常才是真正關卡。</p></article>
+        <article class="card"><span class="num">7</span><h3>資金與競爭者</h3><p>可投入多少？有沒有理專、同業、親友業務員？先知道戰場在哪。</p></article>
+      </div></div>
+    </section>
+
+    <section id="attack" class="section" data-step="attack">
+      <div class="wrap split reverse">
+        <div class="flow-panel">
+          <div class="flow-item"><b>1</b><h3>期待</h3><p>問出他想要的未來。</p></div>
+          <div class="flow-arrow">→</div><div class="flow-item"><b>2</b><h3>現況</h3><p>盤點他現在的位置。</p></div>
+          <div class="flow-arrow">→</div><div class="flow-item"><b>3</b><h3>落差</h3><p>算出缺口，製造不平衡。</p></div>
+          <div class="flow-arrow">→</div><div class="flow-item hot"><b>4</b><h3>急迫性</h3><p>把「有道理」推到「現在做」。</p></div>
+        </div>
+        <div class="section-lead"><p class="label">三、進攻鏈</p><h2>右半邊是劍：直擊痛點。</h2><p>價值深挖不是講更多商品，而是讓客戶用自己的答案看見缺口。算完之後，空氣凝結一下沒關係，讓子彈飛一下。</p><blockquote>90% 成交失敗，死於沒急迫性。「晚點再說」是毒藥。</blockquote></div>
+      </div>
+      <div class="wrap"><div class="builder"><div class="builder-head"><h3>進攻鏈練習</h3><button class="btn btn-soft" onclick="buildAttack()">整理進攻鏈</button></div><div class="month-grid attack-grid"><label>客戶期待<input id="attackGoal" class="input" placeholder="例如：55歲退休、醫療不拖累姐姐、保住月繳投資計畫"></label><label>目前現況<input id="attackStatus" class="input" placeholder="例如：月薪5萬、負債1.5萬、保單內容不清楚"></label><label>可量化落差<input id="attackGap" class="input" placeholder="例如：若住院一年不能工作，現金流缺口至少60萬"></label><label>急迫性：為什麼是現在<input id="attackUrgency" class="input" placeholder="例如：7/15 保險年齡加一歲，之後永久加費"></label></div><div id="attackOutput" class="output">填完後，這裡會幫你整理成可問客戶的進攻鏈。</div></div></div>
+    </section>
+
+    <section id="defense" class="section alt" data-step="defense">
+      <div class="wrap split">
+        <div class="section-lead"><p class="label">四、防守鏈</p><h2>左半邊是盾：不要為人作嫁。</h2><p>方案再漂亮，如果客戶不喜歡、錢不在他手上、真正決策者沒聽到、同業已經在旁邊等收割，最後就是你幫別人暖場。這很熱血，也很傻。</p></div>
+        <div class="grid two">
+          <article class="card defend"><h3>偏好</h3><p>避免設計客戶反感的方案。醫療帳戶不一定只靠醫療險，工具要跟偏好對齊。</p></article>
+          <article class="card defend"><h3>決策者</h3><p>枕邊人、同住者、家人可能是阻力也可能是助力。一開始找進來，勝率直接不一樣。</p></article>
+          <article class="card defend"><h3>資金規模</h3><p>每月可撥多少？有沒有既有保單可活化？有資產但沒現金，房貸或帳戶型概念就會出現。</p></article>
+          <article class="card defend"><h3>競爭者</h3><p>理專、同業、親友業務員、網路發問區。人多的地方不要去，客戶也不要放他去那裡被亂槍打鳥。</p></article>
+        </div>
+      </div>
+      <div class="wrap"><div class="workshop"><h3>防守鏈檢核</h3><div class="check-grid"><label><input class="defense-check" type="checkbox" value="我知道客戶偏好與反感的工具">我知道客戶偏好與反感的工具</label><label><input class="defense-check" type="checkbox" value="我知道誰是真正決策者">我知道誰是真正決策者</label><label><input class="defense-check" type="checkbox" value="我知道可投入資金範圍">我知道可投入資金範圍</label><label><input class="defense-check" type="checkbox" value="我知道有沒有競爭者">我知道有沒有競爭者</label></div><button class="btn btn-primary" onclick="buildDefense()">整理防守缺口</button><div id="defenseOutput" class="output">勾選後，這裡會列出你還需要補問的防守問題。</div></div></div>
+    </section>
+
+    <section id="skills" class="section" data-step="skills">
+      <div class="wrap"><div class="center-head"><p class="label">五、Case Study 七技能</p><h2>團隊討論不是救成交，是練問句。</h2><p>不要討論成「你應該怎樣就成交」。重點是：同一個資訊，我們還能怎麼問？問得更準，答案就更值錢。</p></div>
+        <div class="skill-row">
+          <article><b>準備</b><span>80% 成功來自事前準備。</span></article><article><b>辨識</b><span>判斷客戶是真想買，還是先聽聽。</span></article><article><b>識別偏見</b><span>保險排斥、股票迷信，都要轉換。</span></article><article><b>判斷力</b><span>什麼時候 close，什麼時候等。</span></article><article><b>協作</b><span>團隊互問，補足盲點。</span></article><article><b>好奇心</b><span>多問一句，資訊多一層。</span></article><article><b>自信心</b><span>來自紀錄、回放、重複成功。</span></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="questions" class="section alt" data-step="questions">
+      <div class="wrap"><div class="center-head"><p class="label">六、問句庫</p><h2>照抄可以，照唸不行。</h2><p>問句要變成你的語氣。下面每一句都可以複製，但最好改成你講得出口的版本。</p></div>
+        <div class="question-tabs no-print"><button class="active" data-qtab="goal">目標/現況/落差</button><button data-qtab="urgency">急迫性</button><button data-qtab="defense">防守</button><button data-qtab="medical">醫療案例</button></div>
+        <div id="questionPanel" class="question-panel"></div>
+      </div>
+    </section>
+
+    <section id="case" class="section" data-step="case">
+      <div class="wrap split">
+        <div class="section-lead"><p class="label">七、方小姐案例</p><h2>45 歲、旅行社、目標談醫療。</h2><p>這個案例好用，因為它同時有：既有信任、醫療缺口、收入限制、負債、生日急迫性、隱形競爭者。九宮格剛好全部用得到。</p></div>
+        <div class="case-card">
+          <h3>客戶 KYC</h3>
+          <ul>
+            <li><b>關係：</b>緣故，好聯絡，IG / FB 會回。</li>
+            <li><b>工作：</b>旅行社開票人員，24H on call。</li>
+            <li><b>收入：</b>月薪 4.5～6 萬。</li>
+            <li><b>負債：</b>幫前夫背債，每月 1.5 萬，還到明年。</li>
+            <li><b>家庭：</b>單身、無小孩，與姐姐同住。</li>
+            <li><b>保單：</b>20 年前儲蓄險繳 1 年減額；去年成交月繳 U 4,000；媽媽曾買南山醫療，內容不清楚。</li>
+            <li><b>競爭：</b>本人曾為富邦正職，現有 AG 身分；姐姐也有富邦執照。</li>
+            <li><b>急迫性：</b>1/15 生日，7/15 保險年齡加一歲，目標 7/15 前推進醫療。</li>
+          </ul>
+        </div>
+      </div>
+      <div class="wrap"><div class="case-lab"><h3>案例問句演練</h3><div class="grid two"><article><b>切入目標</b><p>「如果生病或不能工作，會不會影響我們一起存的 U 計畫？我先幫你看醫療保障夠不夠，好不好？」</p></article><article><b>製造落差</b><p>「爸爸住院開刀六七萬是你和姐姐付；如果換成你自己要 15 萬，這筆錢誰出？」</p></article><article><b>經營急迫性</b><p>「10 年前跟現在，哪時候身體比較好？7/15 後保險年齡加一歲，這不是多繳一年，是往後每一年都變貴。」</p></article><article><b>探決策者</b><p>「如果我們討論醫療規劃，需要跟姐姐一起說明嗎？她有富邦執照，我也想尊重她的意見。」</p></article></div></div></div>
+    </section>
+
+    <section id="smallcase" class="section alt">
+      <div class="wrap split reverse">
+        <div class="quote-wall"><article><h3>成交小件的價值</h3><p>小件不是小事。它可以測出客戶要不要花錢、誰是決策者、有沒有競爭者，還能建立後續大議題的信任感。</p></article><article><h3>主管為什麼看起來會算命</h3><p>不是經驗比較玄，是他腦袋裡一直有九宮格。客戶講什麼，都能放回結構裡判斷。</p></article></div>
+        <div class="section-lead"><p class="label">八、總結</p><h2>填滿九宮格不成交，很奇怪。</h2><p>填不滿九宮格卻成交，也很奇怪，因為你不知道對在哪。每個客戶都應該有一張九宮格：知道答案寫答案，不知道答案寫問句。</p><blockquote>把問題帶出門，才不會把客戶聊成一團霧。</blockquote></div>
+      </div>
+    </section>
+
+    <section id="homework" class="section dark" data-step="homework">
+      <div class="wrap"><div class="center-head"><p class="label dark-label">課後作業</p><h2>填一位客戶的九宮格。</h2><p>排法跟總覽一樣：青色是進攻、金色是防守。知道答案寫答案；還不知道的按「待問」——匯出時會自動整理成你出門要帶的問句清單。</p></div>
+        <div class="customer-bar no-print">
+          <label class="cust-label">目前客戶<select id="custSelect" class="input dark-input"></select></label>
+          <button class="btn btn-outline compact" onclick="newCustomer()">＋ 新增客戶</button>
+          <button class="btn btn-outline compact" onclick="deleteCustomer()">刪除此客戶</button>
+        </div>
+        <div class="nine-form-grid">
+          <div class="nf-cell attack"><div class="nf-head"><span>目標：期待與擔心</span><label class="chip"><input type="checkbox" id="unk-goal">待問</label></div><textarea id="nGoal" class="input dark-input" placeholder="他想完成什麼？最擔心什麼？"></textarea></div>
+          <div class="nf-cell attack"><div class="nf-head"><span>急迫性：為什麼現在</span><label class="chip"><input type="checkbox" id="unk-urgency">待問</label></div><textarea id="nUrgency" class="input dark-input" placeholder="生日、等待期、費率、健康、事件、時間成本"></textarea></div>
+          <div class="nf-cell defense"><div class="nf-head"><span>偏好：方案接受度</span><label class="chip"><input type="checkbox" id="unk-preference">待問</label></div><textarea id="nPreference" class="input dark-input" placeholder="台幣/美金、保守/積極、最反感什麼工具"></textarea></div>
+          <div class="nf-cell attack"><div class="nf-head"><span>需求：落差在哪</span><label class="chip"><input type="checkbox" id="unk-need">待問</label></div><textarea id="nNeed" class="input dark-input" placeholder="期待與現況差多少？哪個風險最痛？"></textarea></div>
+          <div class="nf-cell core"><div class="nf-head"><span>客戶核心</span><b id="coreMeta" class="core-meta">已填 0 / 7 格</b></div><input id="custName" class="input dark-input" placeholder="客戶暱稱（例：方小姐）"><textarea id="nNext" class="input dark-input" placeholder="下次拜訪與 Ending Pose：時間、遞送什麼、確認什麼"></textarea></div>
+          <div class="nf-cell defense"><div class="nf-head"><span>決策者：誰能拍板</span><label class="chip"><input type="checkbox" id="unk-decision">待問</label></div><textarea id="nDecision" class="input dark-input" placeholder="本人、配偶、父母、兄弟姐妹、同住者、受益人"></textarea></div>
+          <div class="nf-cell attack nf-wide"><div class="nf-head"><span>現況：財務與保單</span><label class="chip"><input type="checkbox" id="unk-status">待問</label></div><textarea id="nStatus" class="input dark-input" placeholder="收入、支出、資產、負債、保單、時間因素"></textarea></div>
+          <div class="nf-cell defense"><div class="nf-head"><span>資金與競爭者</span><label class="chip"><input type="checkbox" id="unk-competitor">待問</label></div><textarea id="nCompetitor" class="input dark-input" placeholder="可投入資金、既有保單、理專、同業、親友業務員"></textarea></div>
+        </div>
+        <div class="lesson-actions"><button class="btn btn-light" onclick="buildFinalPlan()">生成訪談準備稿</button><button class="btn btn-outline" onclick="copyText('finalOutput')">複製準備稿</button><button class="btn btn-outline" onclick="resetAll()">清空此客戶</button></div>
+        <div id="finalOutput" class="final-output">完成上方欄位後，這裡會生成一份可直接帶去跟主管討論的九宮格準備稿。</div>
+      </div>
+    </section>
+  </main>
+  <div id="toast" class="toast no-print" role="status" aria-live="polite"></div>
+  <script src="js/main.js?v=20260707c"></script>
+</body>
+</html>
